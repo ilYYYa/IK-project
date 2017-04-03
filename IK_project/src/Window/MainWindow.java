@@ -24,6 +24,12 @@ public class MainWindow extends JFrame
 		while(true)
 		{
 			repaint();
+			
+			try
+			{
+				Thread.sleep(16); // 16 --> 1000/60 --> 60fps
+			}
+			catch (InterruptedException e){}
 		}
 	}
 }
