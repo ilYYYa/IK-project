@@ -1,19 +1,27 @@
 package Window;
 
-import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import Obj.DrawbleObject;
+
 public class DoubleBuffer extends JPanel
 {
-	int xx = 0;
+	public ArrayList<DrawbleObject> objectsForDraw = new ArrayList<DrawbleObject>();
+	
+	public void addObjectForDraw(DrawbleObject obj)
+	{
+		objectsForDraw.add(obj);
+	}
 	
 	@Override
 	public void paint(Graphics g)
 	{
-		g.setColor(new Color(0,0,0));
-		g.drawRect(xx, 100, 200, 200);
-		xx++;
+		for(int i = 0; i < objectsForDraw.size(); i++)
+		{
+			objectsForDraw.get(i).draw(g);
+		}
 	}
 }
