@@ -8,7 +8,15 @@ import Panel.GlobalPanel;
 
 public class GlobalScene extends DrawbleObject
 {
+	public int width = 0;
+	public int height = 0;
+	
 	public ArrayList<GlobalPanel> panels = new ArrayList<GlobalPanel>();
+	
+	public GlobalScene(int w, int h)
+	{
+		width = w; height = h;
+	}
 	
 	public void addPanel(GlobalPanel panel)
 	{

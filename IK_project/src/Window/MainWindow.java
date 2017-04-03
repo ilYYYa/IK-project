@@ -6,6 +6,8 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+import Scene.TestingScene;
+
 public class MainWindow extends JFrame
 {
 	DoubleBuffer buff = new DoubleBuffer();
@@ -20,6 +22,8 @@ public class MainWindow extends JFrame
 		this.add(buff);
 		
 		this.setVisible(true);
+		
+		buff.addObjectForDraw(new TestingScene(buff.getWidth(), buff.getHeight()));
 		
 		while(true)
 		{
