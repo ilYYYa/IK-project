@@ -14,7 +14,7 @@ public class Main
 
 	public static void main(String[] args)
 	{
-		new FrameClassTest();//rererer
+		new FrameClassTest();//rerererirururr
 	}
 
 }
