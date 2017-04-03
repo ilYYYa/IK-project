@@ -1,27 +1,47 @@
 package Window;
 
 import java.awt.Graphics;
-import java.util.ArrayList;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
-import Obj.DrawbleObject;
+import Scene.GlobalScene;
 
 public class DoubleBuffer extends JPanel
 {
-	public ArrayList<DrawbleObject> objectsForDraw = new ArrayList<DrawbleObject>();
+	public static GlobalScene Scene = null;
 	
-	public void addObjectForDraw(DrawbleObject obj)
+	public static void setScene(GlobalScene scene)
 	{
-		objectsForDraw.add(obj);
+		Scene = scene;
 	}
 	
 	@Override
 	public void paint(Graphics g)
 	{
-		for(int i = 0; i < objectsForDraw.size(); i++)
-		{
-			objectsForDraw.get(i).draw(g);
-		}
+		if(Scene != null) Scene.draw(g);
+	}
+	
+	public static void onMouseClick(MouseEvent event)
+	{
+		if(Scene != null) Scene.onMouseClick(event);
+	}
+	public static void onMousePress(MouseEvent event)
+	{
+		if(Scene != null) Scene.onMousePress(event);
+	}
+	public static void onMouseRelease(MouseEvent event)
+	{
+		if(Scene != null) Scene.onMouseRelease(event);
+	}
+
+	public static void onKeyPress(KeyEvent event)
+	{
+		if(Scene != null) Scene.onKeyPress(event);
+	}
+	public static void onKeyRelease(KeyEvent event)
+	{
+		if(Scene != null) Scene.onKeyRelease(event);
 	}
 }
