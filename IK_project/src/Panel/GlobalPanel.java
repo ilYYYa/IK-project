@@ -1,15 +1,19 @@
 package Panel;
 
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 import Obj.DrawbleObject;
 
-public abstract class GlobalPanel extends DrawbleObject
+public class GlobalPanel extends DrawbleObject
 {
-	public int posX = 0;
-	public int posY = 0;
-	public int width = 0;
-	public int height = 0;
+	public ArrayList<DrawbleObject> objectsForDraw = new ArrayList<DrawbleObject>();
+	
+	public void addObjectForDraw(DrawbleObject obj)
+	{
+		objectsForDraw.add(obj);
+	}
+	
 	
 	public GlobalPanel(int x, int y, int w, int h)
 	{
@@ -19,6 +23,14 @@ public abstract class GlobalPanel extends DrawbleObject
 		height = h;
 	}
 	
-	public abstract void draw(Graphics g);
+	public void draw(Graphics g)
+	{
+		for(int i = 0; i < objectsForDraw.size(); i++)
+		{
+			objectsForDraw.get(i).posX = this.posX + objectsForDraw.get(i).localPosX;
+			objectsForDraw.get(i).posY = this.posY + objectsForDraw.get(i).localPosY;
+			objectsForDraw.get(i).draw(g);
+		}
+	}
 
 }

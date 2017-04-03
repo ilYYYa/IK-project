@@ -23,7 +23,7 @@ public class MainWindow extends JFrame
 		
 		this.setVisible(true);
 		
-		buff.addObjectForDraw(new TestingScene(buff.getWidth(), buff.getHeight()));
+		buff.addObjectForDraw(new TestingScene(this.getWidth(), this.getHeight()));
 		
 		while(true)
 		{
