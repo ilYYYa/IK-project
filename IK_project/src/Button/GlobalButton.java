@@ -10,10 +10,11 @@ public class GlobalButton extends DrawbleObject
 	public Color bgColor = new Color(200,200,200);
 	public Color borderColor = new Color(255,255,255);
 	public Color textColor = new Color(0,0,0);
+	public Color OnButtonMouseBgColor = new Color(180,180,180);
 	
 	public String Text = "";
 
-	public GlobalButton(int x, int y, int w, int h)
+	public GlobalButton(double x, double y, double w, double h)
 	{
 		localPosX = x; localPosY = y; width = w; height = h;
 	}
@@ -22,11 +23,11 @@ public class GlobalButton extends DrawbleObject
 	public void draw(Graphics g)
 	{
 		g.setColor(bgColor);
-		g.fillRect(posX, posY, width, height);
+		g.fillRect((int)posX, (int)posY, (int)width, (int)height);
 		g.setColor(borderColor);
-		g.drawRect(posX, posY, width, height);
+		g.drawRect((int)posX, (int)posY, (int)width, (int)height);
 		g.setColor(textColor);
-		g.drawString(Text, posX + 5, posY + height/2);
+		g.drawString(Text, (int)posX + 5, (int)posY + (int)height/2);
 	}
 	
 	public GlobalButton setText(String text)

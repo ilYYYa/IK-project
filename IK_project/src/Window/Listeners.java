@@ -16,63 +16,63 @@ public class Listeners implements KeyListener, MouseListener, MouseMotionListene
 	}
 
 	@Override
-	public void mouseDragged(MouseEvent arg0)
+	public void mouseDragged(MouseEvent event)
 	{
-		
+		buff.onMouseMove(event);
 	}
 
 	@Override
-	public void mouseMoved(MouseEvent arg0)
+	public void mouseMoved(MouseEvent event)
 	{
-		
+		buff.onMouseMove(event);
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent arg0)
+	public void mouseClicked(MouseEvent event)
 	{
-		
+		buff.onMouseClick(event);
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent arg0)
+	public void mouseEntered(MouseEvent event)
 	{
-		
+		//FUCK THIS
 	}
 
 	@Override
-	public void mouseExited(MouseEvent arg0)
+	public void mouseExited(MouseEvent event)
 	{
-		
+		//FUCK THIS
 	}
 
 	@Override
-	public void mousePressed(MouseEvent arg0)
+	public void mousePressed(MouseEvent event)
 	{
-		
+		buff.onMousePress(event);
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent arg0)
+	public void mouseReleased(MouseEvent event)
 	{
-		
+		buff.onMouseRelease(event);
 	}
 
 	@Override
-	public void keyPressed(KeyEvent arg0)
+	public void keyPressed(KeyEvent event)
 	{
-		
+		buff.onKeyPress(event);
 	}
 
 	@Override
-	public void keyReleased(KeyEvent arg0)
+	public void keyReleased(KeyEvent event)
 	{
-		
+		buff.onKeyRelease(event);
 	}
 
 	@Override
-	public void keyTyped(KeyEvent arg0)
+	public void keyTyped(KeyEvent event)
 	{
-		
+		//FUCK THIS
 	}
 	
 }
