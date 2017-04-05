@@ -2,6 +2,7 @@ package Button;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
 
 import Obj.DrawbleObject;
 
@@ -52,5 +53,18 @@ public class GlobalButton extends DrawbleObject
 	{
 		bgColor = new Color(r,g,b);
 		return this;
+	}
+
+	public GlobalButton setOnButtonMouseBgColor(int r, int g, int b)
+	{
+		OnButtonMouseBgColor = new Color(r,g,b);
+		return this;
+	}
+	
+	@Override
+	public void onMouseMove(MouseEvent event)
+	{
+		//Need kaifolom's function!!!
+		super.onMouseMove(event);
 	}
 }

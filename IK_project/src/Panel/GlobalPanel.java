@@ -16,6 +16,7 @@ public class GlobalPanel extends DrawbleObject
 		objectsForDraw.add(obj);
 	}
 	
+	//qweqwe
 	
 	public GlobalPanel(double x, double y, double w, double h)
 	{
